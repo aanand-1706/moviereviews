@@ -19,18 +19,13 @@ public class Movie extends BaseEntity{
 
     }
 
-    public Movie(Integer id, String title, String director) {
-        this.id = id;
+    public Movie(String title, String director) {
         this.title = title;
         this.director = director;
     }
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getTitle() {

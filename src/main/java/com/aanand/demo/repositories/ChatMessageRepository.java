@@ -7,5 +7,5 @@ import java.util.UUID;
 
 public interface ChatMessageRepository extends JpaRepository<ChatMessage, UUID>  {
     // Using method naming convention
-    ChatMessage findFirstByChatIdOrderByCreatedAtDesc(UUID chatId);
+    ChatMessage findChatMessageByChatIdAndMsgId(UUID chatId, UUID msgId);
 }

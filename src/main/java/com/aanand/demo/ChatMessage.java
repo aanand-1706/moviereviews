@@ -22,8 +22,18 @@ public class ChatMessage extends BaseEntity{
     @Column(name = "msg_id")
     private UUID msgId;
 
+    public ChatMessage(UUID msgId, UUID chatId, boolean processed) {
+        this.msgId = msgId;
+        this.chatId = chatId;
+        this.processed = processed;
+    }
+
     @Column(name = "processed")
     private boolean processed;
+
+    public ChatMessage() {
+
+    }
 
     public UUID getMsgId() {
         return msgId;

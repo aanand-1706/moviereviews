@@ -25,18 +25,7 @@ public class MovieService {
         return movieRepository.save(movie);
     }
 
-    public String displayAllMovies(){
-        List<Movie> listMovies = movieRepository.findAll();
-
-        StringBuilder sb = new StringBuilder();
-        for (Movie movie : listMovies) {
-            sb.append(movie.getTitle())
-                    .append(" ")
-                    .append(movie.getId())
-                    .append("\n");
-        }
-        sb.append("Send Movie<space>Number to select");
-
-        return sb.toString();
+    public List<Movie> fetchAllMovies(){
+        return movieRepository.findAll();
     }
 }

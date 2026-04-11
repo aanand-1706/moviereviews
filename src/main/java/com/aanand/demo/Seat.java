@@ -16,6 +16,15 @@ public class Seat extends BaseEntity{
     //to specify primary key
     private UUID id;
 
+    public Seat() {
+    }
+
+    public Seat(Integer movieId, Integer seatNo, boolean isBooked) {
+        this.movieId = movieId;
+        this.seatNo = seatNo;
+        this.isBooked = isBooked;
+    }
+
     @Column(name = "movie_id")
     private Integer movieId;
 
@@ -31,6 +40,18 @@ public class Seat extends BaseEntity{
 
     public Integer getMovieId() {
         return movieId;
+    }
+
+    public void setMovieId(Integer movieId) {
+        this.movieId = movieId;
+    }
+
+    public void setSeatNo(Integer seatNo) {
+        this.seatNo = seatNo;
+    }
+
+    public void setBooked(boolean booked) {
+        isBooked = booked;
     }
 
     public Integer getSeatNo() {
