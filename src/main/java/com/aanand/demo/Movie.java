@@ -1,20 +1,17 @@
 package com.aanand.demo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.UUID;
 
 @Entity
 //this annotation maps it to database table
 //springboot creates the table since we have configured it in application.properties using create-drop
-public class Movie {
+public class Movie extends BaseEntity{
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     //to specify primary key
-    private UUID id;
+    private Integer id;
     private String title;
     private String director;
 
@@ -22,17 +19,17 @@ public class Movie {
 
     }
 
-    public Movie(UUID id, String title, String director) {
+    public Movie(Integer id, String title, String director) {
         this.id = id;
         this.title = title;
         this.director = director;
     }
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

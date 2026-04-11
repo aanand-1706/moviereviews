@@ -1,8 +1,9 @@
-package com.aanand.demo;
+package com.aanand.demo.controllers;
 
+import com.aanand.demo.Movie;
+import com.aanand.demo.services.MovieService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
